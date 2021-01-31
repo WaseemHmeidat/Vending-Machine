@@ -55,10 +55,8 @@ public class CashValidation implements Validator {
 	public void acceptMoney(double totalEnteredMoney, double totalPrice) {
 		// TODO Auto-generated method stub
 		System.out.println("the selected snack to the customer has been dispensed\n\n\n\n");
+		SnackMachine.snacks.get(SnackMachine.choiceValue).pop();
 		if (totalEnteredMoney - totalPrice > 0) {
-		 
-			SnackMachine.snacks.get(SnackMachine.choiceValue).pop();
-			
 			returnChange(Double.parseDouble(df.format(totalEnteredMoney - totalPrice)));
 		}else {
 			SnackMachine.welcomeMethod();
